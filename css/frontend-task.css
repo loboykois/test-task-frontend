@@ -1,0 +1,99 @@
+@import url("styleNull.css");
+
+/* PAGE */
+
+/* WRAPPER */
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1516px;
+  margin: 0 auto;
+
+  padding: 10px;
+}
+
+/* MAIN */
+.main {
+  flex: 1 1 auto;
+  margin-bottom: 100px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  max-width: 70%;
+  height: 300px;
+  border: 1px solid #000;
+  border-radius: 10px;
+
+  position: relative;
+}
+
+.text {
+  display: none;
+}
+
+/* FROM STORAGE */
+
+.fromstorage {
+  /* display: none; */
+
+  position: absolute;
+
+  top: 15px;
+  left: 15px;
+
+  border: 1px solid #000;
+}
+.storage__img {
+}
+.storage__name {
+}
+.storage__surname {
+}
+.storage__weight {
+}
+.storage__height {
+}
+.storage__trained {
+}
+.storage__edit {
+}
+.storage__remove {
+}
+
+/* FOOTER */
+.footer {
+}
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  max-width: 35%;
+  height: 100px;
+
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.button__add,
+.button__remove {
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+}
+.button__add {
+}
+.button__remove {
+}

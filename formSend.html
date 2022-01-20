@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/formSend.css">
+   <title>Document</title>
+</head>
+
+<body>
+
+   <section class="section">
+      <div class="container">
+         <form id="myForm" class="form">
+
+            <div class="form__name">
+               <label for="name">Name</label>
+               <input type="text" id="name" placeholder="Test" name="name" autofocus>
+            </div>
+
+            <div class="form__surname">
+               <label for="surname">Surname</label>
+               <input type="text" id="surname" placeholder="User" name="surname">
+            </div>
+
+            <div class="form__data">
+               <div class="form__weight">
+                  <label for="weight">Weight</label>
+                  <input type="text" id="weight" placeholder="111" name="weight">
+                  <p>KG</p>
+               </div>
+               <div class="form__height">
+                  <label for="height">Height</label>
+                  <input type="text" id="height" placeholder="111" name="height">
+                  <p>CM</p>
+               </div>
+               <div class="form__trained">
+                  <label for="trained">Trained</label>
+                  <input type="text" id="trained" placeholder="111" name="trained">
+                  <p>TIMES</p>
+               </div>
+            </div>
+
+            <div class="form__btn">
+               <button class="form__btn--back" type="reset">Back</button>
+               <button class="form__btn--save" type="submit">Save</button>
+            </div>
+
+         </form>
+      </div>
+   </section>
+
+   <script src="/js/formSend.js"></script>
+</body>
+
+</html>
