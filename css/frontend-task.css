@@ -39,13 +39,13 @@
 }
 
 .text {
-  display: none;
+  /* display: none; */
 }
 
 /* FROM STORAGE */
 
 .fromstorage {
-  /* display: none; */
+  display: none;
 
   position: absolute;
 
