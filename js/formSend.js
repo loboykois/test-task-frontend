@@ -1,67 +1,48 @@
 "use strict";
 
-// formToSend.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   const nameInput = document.getElementById("name").value.trim();
-//   const surnameInput = document.getElementById("surname").value.trim();
-//   const weightInput = document.getElementById("weight").value.trim();
-//   const heightInput = document.getElementById("height").value.trim();
-//   const trainedInput = document.getElementById("trained").value.trim();
-
-//   if (
-//     !nameInput ||
-//     !surnameInput ||
-//     !weightInput ||
-//     !heightInput ||
-//     !trainedInput
-//   ) {
-//     return;
-//   }
-
-//   const person = {
-//     name: nameInput,
-//     surname: surnameInput,
-//     weight: weightInput + " KG",
-//     height: heightInput + " CM",
-//     trained: trainedInput + " Times",
-//   };
-
-//   localStorage.setItem("person", JSON.stringify(person));
-
-//   window.location.href = "frontend-task.html";
-// });
-
 // ======================= Class person =======================
-
 class Person {
-  constructor(descriptor) {
-    this.id = descriptor.id;
-    this.name = descriptor.name;
-    this.surname = descriptor.surname;
-    this.weight = descriptor.weight;
-    this.height = descriptor.height;
-    this.trained = descriptor.trained;
-  }
+//   constructor(descriptor) {
+//     this.id = descriptor.id;
+//     this.name = descriptor.name;
+//     this.surname = descriptor.surname;
+//     this.weight = descriptor.weight;
+//     this.height = descriptor.height;
+//     this.trained = descriptor.trained;
+//   }
+  id= Date.now();
+  name= document.getElementById("name").value.trim();
+  surname = document.getElementById("surname").value.trim();
+  weight = document.getElementById("weight").value.trim();
+  height = document.getElementById("height").value.trim();
+  trained = document.getElementById("trained").value.trim();
 }
 
 // ======================= Trainee =======================
 
-const trainee = new Person({
-  id: Date.now(),
-  name: document.getElementById("name").value.trim(),
-  surname: document.getElementById("surname").value.trim(),
-  weight: document.getElementById("weight").value.trim(),
-  height: document.getElementById("height").value.trim(),
-  trained: document.getElementById("trained").value.trim(),
-});
+
+// const trainee = new Person({
+//   id: Date.now(),
+//   name: document.getElementById("name").value.trim(),
+//   surname: document.getElementById("surname").value.trim(),
+//   weight: document.getElementById("weight").value.trim(),
+//   height: document.getElementById("height").value.trim(),
+//   trained: document.getElementById("trained").value.trim(),
+// });
 
 // ======================= Storage controller =======================
 
 class StorageController {
   saveToStorage() {
-    localStorage.setItem();
+   let counter = 1;
+    localStorage.setItem("trainee" + counter, JSON.stringify(Person));
+    counter++
   }
 }
+
+// ======================= Storage =======================
+
+const storage = new StorageController();
 
 // ======================= BTN controller =======================
 
@@ -75,8 +56,9 @@ class BtnController {
     });
   }
   saveToStorage() {
-    saveBtn.addEventListener("submit", (event) => {
+    saveBtn.addEventListener("click", (event) => {
       event.preventDefault();
+      storage.saveToStorage();
       // localStorage.setItem("trainee", JSON.stringify(trainee));
     });
   }
@@ -85,8 +67,4 @@ class BtnController {
 const buttons = new BtnController();
 
 buttons.getBack();
-// buttons.saveToStorage();
-
-saveBtn.addEventListener("submit", (e) =>{
-   e.preventDefault()
-})
+buttons.saveToStorage();
