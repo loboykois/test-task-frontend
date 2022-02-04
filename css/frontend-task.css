@@ -38,6 +38,21 @@
   position: relative;
 }
 
+.article {
+}
+.article__img {
+}
+.article__list {
+}
+.article__item {
+}
+.article__btn {
+}
+.edit__btn {
+}
+.remove__btn {
+}
+
 .text {
   /* display: none; */
 }
