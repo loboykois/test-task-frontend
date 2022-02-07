@@ -3,6 +3,7 @@
 /* PAGE */
 
 /* WRAPPER */
+
 .wrapper {
   min-height: 100%;
   overflow: hidden;
@@ -12,6 +13,7 @@
 }
 
 /* CONTAINER */
+
 .container {
   max-width: 1516px;
   margin: 0 auto;
@@ -20,6 +22,7 @@
 }
 
 /* MAIN */
+
 .main {
   flex: 1 1 auto;
   margin-bottom: 100px;
@@ -34,59 +37,50 @@
   height: 300px;
   border: 1px solid #000;
   border-radius: 10px;
-
-  position: relative;
 }
+
+/* ARTICLE */
 
 .article {
+  display: flex;
+  flex-grow: 1;
+
+  max-width: 100em;
 }
 .article__img {
+  min-width: 64px;
+  min-height: 64px;
+
+  background-color: rgb(180, 180, 180);
+
+  margin-right: 15px;
 }
 .article__list {
+   margin-right: 15px;
 }
 .article__item {
 }
 .article__btn {
 }
+.edit__btn,
+.remove__btn {
+  border-radius: 5px;
+  width: 150px;
+  height: 35px;
+}
+
 .edit__btn {
+  margin-right: 15px;
 }
 .remove__btn {
 }
 
 .text {
-  /* display: none; */
-}
-
-/* FROM STORAGE */
-
-.fromstorage {
   display: none;
-
-  position: absolute;
-
-  top: 15px;
-  left: 15px;
-
-  border: 1px solid #000;
-}
-.storage__img {
-}
-.storage__name {
-}
-.storage__surname {
-}
-.storage__weight {
-}
-.storage__height {
-}
-.storage__trained {
-}
-.storage__edit {
-}
-.storage__remove {
 }
 
 /* FOOTER */
+
 .footer {
 }
 .buttons {

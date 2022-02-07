@@ -9,7 +9,7 @@ function uuidv4() {
   });
 }
 
-// ==================== Form ====================
+// ==================== Form elements ====================
 
 const myForm = document.querySelector("form");
 const formName = document.getElementById("name");
@@ -22,26 +22,41 @@ const saveBtn = document.querySelector(".form__btn--save");
 
 // ==================== Storage controller ====================
 
-class StorageController {
-   addItem(obj) {
-     localStorage.setItem("person" + " " + obj.name, JSON.stringify(obj));
-   }
+class StorageController2 {
+  addItem(obj) {
+    localStorage.setItem("person" + " " + obj.name, JSON.stringify(obj));
+  }
 
-   remove(obj) {
-      localStorage.removeItem("person" + " " + obj.name)
-   }
- 
-   getItem(obj) {
-     localStorage.getItem("person" + " " + obj.name, JSON.parse(obj));
-   }
- 
-   clear() {
-     localStorage.clear();
-   }
- }
- 
- const storage = new StorageController();
+  removeItem(obj) {
+    localStorage.removeItem("person" + " " + obj.name);
+  }
 
+  getItem(obj) {
+    localStorage.getItem("person" + " " + obj.name, JSON.parse(obj));
+  }
+
+  clear() {
+    localStorage.clear();
+  }
+}
+
+const storage2 = new StorageController2();
+
+// ==================== BTN controller ====================
+
+class BtnController2 {
+  sendToForm() {
+    myForm.addEventListener("submit", createPerson);
+  }
+
+  backToForm() {
+    backBtn.onclick = () => {
+      window.location.href = "frontend-task.html";
+    };
+  }
+}
+
+const btnDesk2 = new BtnController2();
 
 // ==================== Create person ====================
 
@@ -57,9 +72,10 @@ function createPerson(event) {
     trained: formTrained.value,
   };
 
-  //   storageControl(person);
-  storage.addItem(person);
+  storage2.addItem(person);
+
+  window.location.href = "frontend-task.html";
 }
 
-myForm.addEventListener("submit", createPerson);
-
+btnDesk2.backToForm();
+btnDesk2.sendToForm();
