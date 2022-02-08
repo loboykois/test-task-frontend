@@ -33,8 +33,15 @@ class StorageController {
     localStorage.clear();
   }
 
-  getItem() {
-    localStorage.getItem();
+  getItemLS() {
+    if (localStorage.getItem("person Ilia")) {
+      return JSON.parse(localStorage.getItem("person Ilia"));
+    }
+    return;
+  }
+
+  removeItemLS (obj) {
+     localStorage.removeItem(obj.name);
   }
 }
 
@@ -43,6 +50,19 @@ const storage = new StorageController();
 btnDesk.sendToForm();
 btnDesk.removeAll();
 
-// function getItemFromStorage() {
-//   articleList.createElement();
-// }
+const person = storage.getItemLS();
+
+// ==================== Get items from storage ====================
+
+function getItemFromStorage(obj) {
+  const newLi = document.createElement("li");
+  newLi.classList = "article__item";
+  newLi.innerHTML = `${obj}`;
+  articleList.append(newLi);
+}
+
+getItemFromStorage(person.name);
+getItemFromStorage(person.surname);
+getItemFromStorage(person.weight + " " + "KG");
+getItemFromStorage(person.height + " " + "CM");
+getItemFromStorage(person.trained + " " + "Times");
